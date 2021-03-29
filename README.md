@@ -16,7 +16,7 @@
 | DEBUG | False | boolean |
 | DEVELOPMENT | False | boolean |
 | ADMIN_ENABLED | False | boolean |
-| DATABASE_URL | postgres://username:password@address:port/monetarium | string |
+| DATABASE_URL | sqlite:///db.sqlite3 | string |
 | LANGUAGE_CODE | pt-br | string |
 | TIME_ZONE | UTC | string |
 | USE_I18N | True | boolean |
