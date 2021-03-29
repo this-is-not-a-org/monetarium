@@ -9,6 +9,7 @@
 ```python contrib/make_env.py```
 
 - .env variables:
+
 | name | default | type |
 | :--: | :-----: | :--: |
 | SECRET_KEY | generate random string | string |
