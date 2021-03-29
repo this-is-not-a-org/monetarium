@@ -26,12 +26,12 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = config("SECRET_KEY")
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = config("DEBUG")
+DEBUG = config("DEBUG", default=False, cast=bool)
 
 ALLOWED_HOSTS = config(
         "ALLOWED_HOSTS",
-        cast=Csv,
-        default="127.0.0.1, 0.0.0.0, localhost"
+        default="127.0.0.1, 0.0.0.0, localhost",
+        cast=Csv(),
     )
 
 
@@ -45,6 +45,9 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
 ]
+
+if config("DEVELOPMENT", default=False, cast=bool):
+    INSTALLED_APPS += ["django_extensions"]
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
@@ -81,16 +84,12 @@ WSGI_APPLICATION = 'monetarium.wsgi.application'
 # https://docs.djangoproject.com/en/3.1/ref/settings/#databases
 
 DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.postgresql_psycopg2',
-        'NAME': 'monetarium',
-        'USER': 'lucas_lima',
-        'PASSWORD': 'postgres',
-        'HOST': 'localhost',
-        'PORT': '5432'
-    }
+    "default": config(
+        "DATABASE_URL",
+        default="sqlite:///" + str(Path.joinpath(BASE_DIR, "db.sqlite3")),
+        cast=db_url
+    )
 }
-
 
 # Password validation
 # https://docs.djangoproject.com/en/3.1/ref/settings/#auth-password-validators
@@ -114,18 +113,21 @@ AUTH_PASSWORD_VALIDATORS = [
 # Internationalization
 # https://docs.djangoproject.com/en/3.1/topics/i18n/
 
-LANGUAGE_CODE = config("LANGUAGE_CODE")
+LANGUAGE_CODE = config("LANGUAGE_CODE", default="en-us")
 
-TIME_ZONE = 'UTC'
+TIME_ZONE = config("TIME_ZONE", default="UTC")
 
-USE_I18N = True
+USE_I18N = config("USE_I18N", default=True, cast=bool)
 
-USE_L10N = True
+USE_L10N = config("USE_L10N", default=True, cast=bool)
 
-USE_TZ = True
+USE_TZ = config("USE_TZ", default=True, cast=bool)
 
 
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/3.1/howto/static-files/
 
 STATIC_URL = '/static/'
+
+# Custom settings
+ADMIN_ENABLED = config("ADMIN_ENABLED", default=False, cast=bool)

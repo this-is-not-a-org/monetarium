@@ -15,8 +15,12 @@ def make_env():
 DEBUG=TRUE
 DEVELOPMENT=TRUE
 ADMIN_ENABLED=TRUE
+# DATABASE_URL=postgres://username:password@address:port/monetarium
 # LANGUAGE_CODE=pt-br
-# DATABASE_URL=postgres://username:password@address:port/phonebook
+# TIME_ZONE = UTC
+# USE_I18N = TRUE
+# USE_L10N = TRUE
+# USE_TZ = TRUE
 # ALLOWED_HOSTS=localhost, 0.0.0.0, 127.0.0.1
 """)
         file.close()
