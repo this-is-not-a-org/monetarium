@@ -10,7 +10,7 @@
 
 - .env variables:
 | name | default | type |
-| ---- | ------- | ---- |
+| :--: | :-----: | :--: |
 | SECRET_KEY | generate random string | string |
 | DEBUG | False | boolean |
 | DEVELOPMENT | False | boolean |
