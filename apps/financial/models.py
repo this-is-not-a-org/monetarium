@@ -11,8 +11,8 @@ class Planning(models.Model):
 
 class Card(models.Model):
     CARD_TYPE_CHOICES = [
-        ('CR', 'Crédito'),
-        ('DE', 'Débito'),
+        ('CC', 'Credit card'),
+        ('DC', 'Debit card'),
     ]  
     name = models.CharField(max_length=255)
     card_type = models.CharField(max_length=2, choices=CARD_TYPE_CHOICES, default='CR')
@@ -24,12 +24,12 @@ class Card(models.Model):
 
 class FinanceIncome(models.Model):
     FINANCE_INCOME_TYPE_CHOICES = [
-        ('DV', 'Dívida'),
-        ('DVR', 'Dívida recorrentes'),
-        ('DVC', 'Dívida com cartão'),
-        ('DS', 'Dinheiro separado'),
-        ('RR', 'Renda recorrente'),
-        ('RA', 'Renda adicional'),
+        ('DB', 'Debt'),
+        ('RD', 'Recurring debt'),
+        ('CD', 'Card debt'),
+        ('SM', 'Separate money'),
+        ('RI', 'Recurring income'),
+        ('AI', 'Additional income'),
     ]
     name = models.CharField(max_length=255)
     tipo = models.CharField(max_length=3, choices=FINANCE_INCOME_TYPE_CHOICES, default='DV')
