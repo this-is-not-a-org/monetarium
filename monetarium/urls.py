@@ -20,7 +20,7 @@ from monetarium.settings import ADMIN_ENABLED
 
 urlpatterns = [
         path("", include("apps.core.urls")),
-        path("api/", include("rest_framework.urls"))
+        path("api/", include("apps.api.urls"))
     ]
 
 if ADMIN_ENABLED:
