@@ -3,6 +3,12 @@ from django.db import models
 from django.urls import reverse_lazy
 
 
+class Planning(models.Model):
+    name = models.CharField(max_length=255)
+    description = models.CharField(max_length=650)
+    init_date = models.DateField()
+    final_date = models.DateField()
+
 class Card(models.Model):
     CARD_TYPE_CHOICES = [
         ('CR', 'Crédito'),

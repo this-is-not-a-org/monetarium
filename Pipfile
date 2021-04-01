@@ -8,11 +8,13 @@ django = "~=3.1.7"
 python-decouple = "~=3.4"
 dj-database-url = "~=0.5.0"
 psycopg2 = "~=2.8.6"
-
+black = "*"
+decouple = "*"
 
 [dev-packages]
 coverage = "*"
 django-extensions = "*"
+black = "*"
 
 [requires]
 python_version = "3.9"
