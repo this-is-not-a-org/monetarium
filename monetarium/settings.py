@@ -46,6 +46,8 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
 
     "rest_framework",
+    'apps.core',
+    'apps.financial',
 ]
 
 if config("DEVELOPMENT", default=False, cast=bool):

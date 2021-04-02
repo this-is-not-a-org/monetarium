@@ -13,6 +13,7 @@ djangorestframework = "~=3.12.4"
 [dev-packages]
 coverage = "*"
 django-extensions = "*"
+black = "*"
 
 [requires]
 python_version = "3.9"
