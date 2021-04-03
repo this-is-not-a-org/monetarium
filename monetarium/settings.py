@@ -48,6 +48,7 @@ INSTALLED_APPS = [
     "rest_framework",
     'apps.core',
     'apps.financial',
+    'apps.users',
 ]
 
 if config("DEVELOPMENT", default=False, cast=bool):
@@ -135,3 +136,7 @@ STATIC_URL = '/static/'
 
 # Custom settings
 ADMIN_ENABLED = config("ADMIN_ENABLED", default=False, cast=bool)
+
+#user authentication
+LOGIN_REDIRECT_URL = 'home'
+LOGOUT_REDIRECT_URL = 'home'

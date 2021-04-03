@@ -1,3 +1,4 @@
+from django import contrib
 from django.contrib import admin
 from django.urls import include, path
 
@@ -5,7 +6,9 @@ from monetarium.settings import ADMIN_ENABLED
 
 urlpatterns = [
         path("", include("apps.core.urls")),
-        path("financial", include("apps.financial.urls")),
+        path("users/", include("apps.users.urls")),
+        path("users/", include("django.contrib.auth.urls")),
+        #path("financial", include("apps.financial.urls")),
         path("api/", include("apps.api.urls"))
     ]
 
