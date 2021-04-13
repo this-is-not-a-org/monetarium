@@ -48,7 +48,6 @@ INSTALLED_APPS = [
     "rest_framework",
     'apps.core',
     'apps.financial',
-    'apps.users',
 ]
 
 if config("DEVELOPMENT", default=False, cast=bool):

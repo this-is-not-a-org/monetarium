@@ -47,7 +47,7 @@ class FinanceIncome(models.Model):
         return self.name
 
 
-class Savings(models.Model):
+class Saving(models.Model):
     name = models.CharField(max_length=255)
     value = models.DecimalField(max_digits=20, decimal_places=2)
     goal = models.DecimalField(max_digits=20, decimal_places=2)
