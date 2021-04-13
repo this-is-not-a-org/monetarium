@@ -135,3 +135,7 @@ STATIC_URL = '/static/'
 
 # Custom settings
 ADMIN_ENABLED = config("ADMIN_ENABLED", default=False, cast=bool)
+
+#user authentication
+LOGIN_REDIRECT_URL = 'home'
+LOGOUT_REDIRECT_URL = 'home'
